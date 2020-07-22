@@ -1,0 +1,21 @@
+{
+  "name": "slate-css",
+  "version": "1.0.0",
+  "description": "Front-end sass component and layout library.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "Ben Stapleton",
+    "email": "webdev.ben@gmail.com"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.5.0",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.1.0",
+    "gulp-strip-css-comments": "^2.0.0",
+    "gulp-clean-css": "^4.3.0"
+  }
+}

@@ -1,0 +1,15 @@
+@mixin noListStyle() {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+@mixin orderedList() {
+    @each $style in $orderedListItemStyles {
+        .list--#{$style} {
+            .list__item {
+                list-style-type: #{$style};
+            }
+        }
+    }
+}

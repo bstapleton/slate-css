@@ -1,0 +1,62 @@
+.icon {
+    width: $defaultUnit * 4.5;
+    height: $defaultUnit * 4.5;
+    fill: $grey-900;
+
+    .background {
+        fill: lighten($grey-900, 10%);
+    }
+}
+
+.icon--withCounter {
+    .counter {
+        display: initial;
+        fill: $danger;
+    }
+}
+
+.icon--symbolOnly {
+    .outline {
+        display: none;
+    }
+}
+
+.icon--success {
+    fill: $success;
+}
+
+.icon--neutral {
+    fill: $info;
+}
+
+.icon--warning {
+    fill: $warning;
+}
+
+.icon--danger {
+    fill: $danger;
+}
+
+.icon--faded {
+    fill: #ccc;
+}
+
+.icon--smaller {
+    width: $defaultUnit * 3;
+    height: $defaultUnit * 3;
+
+    svg {
+        width: $defaultUnit * 3;
+        height: $defaultUnit * 3;
+    }
+}
+
+.icon--smallest {
+    width: $defaultUnit * 2;
+    height: $defaultUnit * 2;
+
+    svg {
+        width: $defaultUnit * 2;
+        height: $defaultUnit * 2;
+    }
+}
