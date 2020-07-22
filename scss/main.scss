@@ -1,9 +1,3 @@
-$primary: #bdf1af;
-$secondary: #659059;
-$tertiary: #e08b5a;
-$background: #153935;
-
-@import 'variables';
 @import 'mixins/box-sizing';
 @import 'mixins/flex';
 @import 'mixins/field';
@@ -21,6 +15,7 @@ $background: #153935;
 @import 'mixins/text';
 @import 'mixins/opacity';
 @import 'mixins/svg';
+@import 'mixins/button';
 
 @import 'utilities/global';
 @import 'utilities/positioning';
@@ -51,23 +46,27 @@ $background: #153935;
 @include fill;
 
 @each $breakpoint, $minimum in $grid-breakpoints {
-  @media (min-width: #{$minimum}) {
-    @include margin(#{$breakpoint});
-    @include padding(#{$breakpoint});
-    @include text-scale(#{$breakpoint});
-    @include text-color(#{$breakpoint});
-    @include text-align(#{$breakpoint});
-    @include text-weight(#{$breakpoint});
-    @include line-height(#{$breakpoint});
-    @include letter-spacing(#{$breakpoint});
-    @include border-radius(#{$breakpoint});
-    @include border-color(#{$breakpoint});
-    @include border-width(#{$breakpoint});
-    @include border-style(#{$breakpoint});
-    @include flex-container(#{$breakpoint});
-    @include flex-direction(#{$breakpoint});
-    @include flex-basis(#{$breakpoint});
-  }
+    @media (min-width: #{$minimum}) {
+        @include margin(#{$breakpoint});
+        @include padding(#{$breakpoint});
+        @include text-scale(#{$breakpoint});
+        @include text-color(#{$breakpoint});
+        @include text-align(#{$breakpoint});
+        @include text-weight(#{$breakpoint});
+        @include line-height(#{$breakpoint});
+        @include letter-spacing(#{$breakpoint});
+        @include border-radius(#{$breakpoint});
+        @include border-color(#{$breakpoint});
+        @include border-width(#{$breakpoint});
+        @include border-style(#{$breakpoint});
+        @include flex-container(#{$breakpoint});
+        @include flex-direction(#{$breakpoint});
+        @include flex-basis(#{$breakpoint});
+    }
+}
+
+body {
+    background-color: $background;
 }
 
 @import 'components/all';

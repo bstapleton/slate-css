@@ -32,3 +32,9 @@ gulp.task("default", function(done) {
         .pipe(gulp.dest(cssPath + 'dist/themes/'));
     done();
 });
+
+gulp.task("import", function(done) {
+    gulp.src(cssPath + 'themes/dark.css')
+        .pipe(gulp.dest('../uxingames/public/css/themes/'));
+    done();
+});

@@ -1,11 +1,11 @@
-.rangeField {
+.field--range {
     &:hover {
         input {
             margin-bottom: 0;
         }
     }
 
-    label {
+    .field__label {
         top: 0;
         background-color: transparent !important;
         margin-left: 0;

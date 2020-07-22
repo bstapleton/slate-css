@@ -1,51 +1,6 @@
 $buttonHeight: $defaultUnit * 5;
 $buttonMinWidth: $defaultUnit * 8;
 
-@mixin button {
-    @each $color, $value in $themeColors {
-        &--#{$color} {
-            position: relative;
-            @if (lightness($background) > 50) {
-                border-color: $grey-300;
-            }
-            @else {
-                border-color: $grey-800;
-            }
-            @if (lightness($value) > 70) {
-                color: $grey-800;
-            }
-            @else {
-                color: $grey-300;
-            }
-            background-color: $value;
-            transition: 0.2s box-shadow ease-out, 0.1s background-color ease-in;
-
-            &:hover,
-            &:active,
-            &.enabled {
-                @if (lightness($value) > 50) {
-                    background-color: scale-color($value, $lightness: -20%);
-                    color: $grey-800;
-                }
-                @else {
-                    background-color: scale-color($value, $lightness: 20%);
-                    color: $grey-300;
-                }
-            }
-
-            &:hover {
-                color: $white;
-            }
-
-            &:active,
-            &.enabled {
-                box-shadow: 0 0 0 5px $value;
-                border-color: transparent;
-            }
-        }
-    }
-}
-
 .button {
     @include boxSizing;
     @include button;
@@ -94,12 +49,12 @@ $buttonMinWidth: $defaultUnit * 8;
 }
 
 .button--disabled {
-    border: 1px solid #ccc;
-    color: #333;
-    background-color: #ccc;
+    border: 1px solid $grey-300;
+    color: $grey-800;
+    background-color: $grey-300;
 
     &:hover {
-        background: #ccc;
+        background: $grey-300;
         cursor: not-allowed;
         text-decoration: none;
     }

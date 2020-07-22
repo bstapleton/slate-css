@@ -1,0 +1,34 @@
+@mixin button {
+    @each $color, $value in $themeColors {
+        &--#{$color} {
+            position: relative;
+            border: 2px solid transparent;
+            @if (lightness($value) > 70) {
+                color: $grey-800;
+            }
+            @else {
+                color: $grey-300;
+            }
+            background-color: $value;
+            transition: 0.1s background-color ease, 0.1s border ease;
+
+            &:hover,
+            &:active,
+            &.enabled {
+                border-color: $value;
+                @if (lightness($value) > 50) {
+                    background-color: scale-color($value, $lightness: -25%);
+                    color: $grey-800;
+                }
+                @else {
+                    background-color: scale-color($value, $lightness: 25%);
+                    color: $grey-300;
+                }
+            }
+
+            &:hover {
+                color: $white;
+            }
+        }
+    }
+}

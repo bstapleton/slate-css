@@ -3,4 +3,10 @@ $secondary: #2ab7ca;
 $tertiary: #fed766;
 $background: #f4f4f8;
 
+@import '../variables';
+
+* {
+    color: $grey-900;
+}
+
 @import '../main';

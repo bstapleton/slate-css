@@ -1,6 +1,12 @@
-$primary: #ff7844;
-$secondary: #a64942;
-$tertiary: #53354a;
-$background: #1b1f3a;
+$primary: #e7a488;
+$secondary: #d07e78;
+$tertiary: #c6b3c6;
+$background: #2f2f3f;
+
+@import '../variables';
+
+* {
+    color: $grey-100;
+}
 
 @import '../main';

@@ -1,19 +1,10 @@
-.checkboxField {
+.field--checkbox {
     .field__label {
         width: calc(100% - (#{$defaultUnit} * 6));
         padding-top: $defaultUnit * 0.5;
         margin-bottom: $defaultUnit;
         position: initial;
         color: $grey-900;
-    }
-
-    .field__label--narrow {
-        flex: 100%;
-
-        @include sm-up() {
-            order: 0;
-            flex: calc(100% - (#{$defaultUnit} * 15.5));
-        }
     }
 
     .field__content {
@@ -118,7 +109,7 @@
         .outline {
             fill: $grey-900;
         }
-    
+
         .symbol {
             fill: transparent;
         }
