@@ -9,7 +9,7 @@ let cssPath = "css/";
 
 gulp.task("default", function(done) {
     console.log("Generate CSS files " + (new Date()).toString());
-    gulp.src(scssPath + 'vendor/bootstrap/bootstrap-grid.scss')
+    gulp.src('./node_modules/bootstrap/scss/bootstrap-grid.scss')
         .pipe(sass().on("error", sass.logError))
         .pipe(gulp.dest(cssPath));
     gulp.src(scssPath + 'themes/dark.scss')
