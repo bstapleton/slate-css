@@ -1,24 +1,8 @@
 .field--select {
     .field__label {
-        cursor: pointer;
-
         &.disabled,
         &.disabled:hover {
             cursor: not-allowed;
         }
-
-        &:hover {
-            cursor: pointer;
-        }
-    }
-
-    .field__main {
-        cursor: pointer;
-    }
-
-    .field__input {
-        @include hiddenInput();
-        padding: 0;
-        border: none;
     }
 }

@@ -17,12 +17,12 @@
         padding: $defaultUnit 0 0;
         margin-bottom: 0;
         -webkit-appearance: none;
-        max-width: $maxWidth - 72px;
+        max-width: $maxInputWidth - 72px;
         background:transparent;
         border: none;
 
         @include md-up() {
-            max-width: $maxWidth - 60px;
+            max-width: $maxInputWidth - 60px;
         }
 
         &::-webkit-slider-thumb {
@@ -74,7 +74,7 @@
 [type='range'] {
     -webkit-appearance: none;
     margin: $defaultUnit / 2 0;
-    max-width: $maxWidth - 60px;
+    max-width: $maxInputWidth - 60px;
 
     &:focus {
         outline: 0;

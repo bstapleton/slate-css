@@ -1,10 +1,10 @@
-$maxWidth: $defaultUnit * 62.5;
+$maxInputWidth: $defaultUnit * 62.5;
+$maxFieldWidth: $maxInputWidth + ($defaultUnit * 6); // Leave space on the right for margin and validation indicators.
 
 .field {
-    position: relative;
     margin: 0 0 ($defaultUnit * 2.5) 0;
     padding: ($defaultUnit * 1.5) 0 0;
-    max-width: $maxWidth + ($defaultUnit * 12);
+    max-width: $maxFieldWidth;
 
     &:hover {
         .field__label {
@@ -29,10 +29,6 @@ $maxWidth: $defaultUnit * 62.5;
                 color: $danger;
             }
         }
-    }
-
-    &.declaration {
-        max-width: 738px;
     }
 
     &.upload .icon {
@@ -141,12 +137,6 @@ $maxWidth: $defaultUnit * 62.5;
             flex: 0 0 ($defaultUnit * 5);
         }
     }
-
-    label {
-        &:not(.field__label) {
-            display: none !important;
-        }
-    }
 }
 
 .field,
@@ -159,8 +149,6 @@ $maxWidth: $defaultUnit * 62.5;
     &.field--text,
     &.field--textarea {
         &.error {
-            textarea,
-            select,
             .field__input {
                 border-color: $danger;
             }
@@ -173,13 +161,13 @@ $maxWidth: $defaultUnit * 62.5;
 }
 
 .field__input {
-    cursor: text;
     font-size: initial;
     border-radius: $defaultUnit;
     padding: ($defaultUnit * 2) ($defaultUnit * 1.5);
     outline: 0;
     width: 100%;
-    max-width: $maxWidth;
+    max-width: $maxInputWidth;
+    margin-right: $defaultUnit * 2;
     @if (lightness($background) > 50) {
         border: 2px solid $grey-400;
         background-color: $grey-100;
@@ -288,7 +276,6 @@ $maxWidth: $defaultUnit * 62.5;
 
 .field__help {
     padding-top: $defaultUnit;
-    display: block;
     font-style: italic;
     @if (lightness($background) > 50) {
         color: $grey-600;
@@ -315,13 +302,7 @@ $maxWidth: $defaultUnit * 62.5;
     }
 }
 
-.field__content {
-    display: flex;
-    align-items: center;
-    margin-bottom: $defaultUnit * 0.5;
-}
-
-.field__prefix {
+.field__prefix { // TODO: rework this to be inside the input area
     flex: 0 0 ($defaultUnit * 4);
     height: $defaultUnit * 3;
 
@@ -333,10 +314,10 @@ $maxWidth: $defaultUnit * 62.5;
 }
 
 .field__main {
-    flex: 1 1 100%;
+    @include flex();
 }
 
-.field__affix {
+.field__affix { // TODO: rework this to be inside the input area
     flex: 0 0 ($defaultUnit * 4);
     padding-left: $defaultUnit;
     height: $defaultUnit * 3;
@@ -348,22 +329,11 @@ $maxWidth: $defaultUnit * 62.5;
     }
 }
 
-.field__icon,
-.field__icon > svg {
-    width: $defaultUnit * 3;
-    height: $defaultUnit * 3;
-
-    @include sm-up() {
-        width: $defaultUnit * 4.5;
-        height: $defaultUnit * 4.5;
-    }
-}
-
-.field .field__help,
+.field__help,
 .field-validation-error,
 .warning-message,
 .valid-feedback {
-    max-width: $maxWidth;
+    max-width: $maxInputWidth;
     margin: 0;
 }
 
