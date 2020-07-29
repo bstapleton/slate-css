@@ -36,5 +36,7 @@ gulp.task("default", function(done) {
 gulp.task("import", function(done) {
     gulp.src(cssPath + 'themes/dark.css')
         .pipe(gulp.dest('../uxingames/public/css/themes/'));
+    gulp.src(cssPath + 'themes/light.css')
+        .pipe(gulp.dest('../uxingames/public/css/themes/'));
     done();
 });

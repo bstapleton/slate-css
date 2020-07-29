@@ -14,7 +14,12 @@ h2,
 h3,
 th,
 td {
-    color: $grey-100;
+    @if (lightness($background) > 70) {
+        color: $grey-900;
+    }
+    @else {
+        color: $grey-100;
+    }
 }
 
 h1,
@@ -25,38 +30,10 @@ h4 {
     font-weight: 300;
     color: $tertiary;
     margin: 0;
-
-    .supplemental {
-        font-size: 0.9rem;
-        display: block;
-        padding: 0.3rem 0.5rem 0 0;
-        float: left;
-
-        &.hidden {
-            display: none;
-        }
-    }
-
-    &.section-header {
-        margin: ($defaultUnit * 3) 0 ($defaultUnit * 4);
-    }
-
-    &.block-heading {
-        border: none;
-        padding: $defaultUnit;
-        font-size: $defaultUnit * 2;
-        text-transform: uppercase;
-        font-weight: 300;
-        margin: 0;
-        display: inline-block;
-        background-color: $primary;
-        color: invert($grey-900);
-    }
 }
 
-h1.page-title {
+h1 {
     color: $primary;
-    font-family: 'Lato', sans-serif;
     font-weight: 200;
     text-transform: uppercase;
     letter-spacing: $defaultUnit * 0.75;
@@ -67,49 +44,21 @@ h1.page-title {
     }
 }
 
-h2.page-title {
-    color: $primary;
-    margin-bottom: 1.4rem;
-
-    @include md-up() {
-        margin-bottom: 1.5rem;
-    }
-}
-
 h2 {
     font-size: 1.4rem;
-
-    @include md-up() {
-        margin-bottom: 1.6rem;
-    }
+    color: $primary;
 }
 
 h3 {
     font-size: 1.3rem;
-
-    @include md-up() {
-        margin-bottom: 1.4rem;
-    }
 }
 
 h4 {
     font-size: 1.2rem;
-
-    @include md-up() {
-        margin-bottom: 1.3rem;
-    }
 }
 
 h5 {
     font-size: 1rem;
-
-    @include md-up() {
-        margin-bottom: 1.1rem;
-    }
-}
-
-p.note {
-    font-size: 0.8rem;
 }
 
 a {
@@ -129,7 +78,7 @@ a {
 }
 
 strong {
-    color: $primary;
+    color: $secondary;
 }
 
 article {
