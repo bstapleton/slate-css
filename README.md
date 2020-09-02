@@ -7,4 +7,4 @@
  ## Todo
  * Further refactoring of components, particularly fields which currently look janky as hell.
  * More themes!
- * Better workflow - likely turn it into an npm package that can be pulled in easiy for other projects. For my personal use its fine short-term for me to just drag the resultant CSS wherever I need it, but this is not a long-term solution!
+ * Better workflow - likely turn it into an npm package that can be pulled in easiy for other projects. For my personal use its fine short-term for me to gulp script copy the CSS wherever I need it, but this is not a long-term solution!
