@@ -12,10 +12,11 @@
   },
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "next",
+    "bootstrap": "5.0.0-alpha1",
     "gulp": "^4.0.2",
     "gulp-sass": "^4.1.0",
     "gulp-strip-css-comments": "^2.0.0",
-    "gulp-clean-css": "^4.3.0"
+    "gulp-clean-css": "^4.3.0",
+    "popper.js": "^1.16.1"
   }
 }
