@@ -30,7 +30,7 @@ Now let's apply some utility-first CSS classes to the same block:
 </header>
 ```
 
-You can tell by looking at the code *roughly* how its going to render out on the screen, because you know what padding and margin is, and you have an understanding of flexbox.
+You can tell by looking at the code *roughly* how it's going to render out on the screen, because you know what padding and margin is, and you have an understanding of flexbox.
 
 The only thing that is kind of unknown at this point is: what on earth is 1x or 2x!?
 
@@ -45,7 +45,7 @@ If you look back at CSS frameworks through the years, you'll find that many (may
 </div>
 ```
 
-Incidentally, this is also pretty neatly utility-first, since all you need to know is that the container is divided into 12 columns to understand that this represents (essentially) a left sidebar that takes up 1/3 of the space and a content area that takes up 2/3 of the space.
+Incidentally, this is also pretty neatly utility-first, since all you need to know is that the container is divided into 12 columns to understand that this represents (essentially) a left sidebar that takes up 1/3 of the viewport, and a content area that takes up 2/3 of the space.
 
 Likewise, with slate-css, all you need to know is that the default unit is 8px. Its one of the first things in the `_variables.scss` file, all of which can be fully customised to suit your needs.
 
@@ -55,9 +55,11 @@ You can find out more about this in the page about variables.
 
 ## When not to use it
 
-The best time **to** use utility-first is when you haven't yet built up an understanding of the design patterns in your front-end. Which is to say; you haven't built up a component library yet of CSS patterns that you want to use in many places. Directly applying utility-first is most useful when it comes to layout, or elements that will only be rendered out infrequently enough to not warrant having its own component.
+The best time **to** use utility-first is when you haven't yet built up an understanding of the design patterns in your front-end. Which is to say; you haven't built up a component library yet of CSS patterns that you want to use in many places. Directly applying utility-first is most useful when it comes to prototyping layouts, or elements that will only be rendered out infrequently enough to not warrant having its own component.
 
-...But that's not to say you can't *use* the mixins from the utility-first side in you component library! Utility-first does tend to add a good chunk of kB to your resultant CSS files, so its always better to re-use, rather than re-write. :smile:
+...But that's not to say you can't `@include` the mixins from the utility-first side in you component library! Just be mindful it will add a good chunk of kB to your resultant CSS files.
+
+Without any kind of naming-and-shaming, it should be noted that it's very easy to let utility-first to get out of hand. Treat it as guidelines for free-thinking individuals with a modicum of common sense, using what you need, when you need it, and you'll be fine.
 
 ## Wrapping up
 
