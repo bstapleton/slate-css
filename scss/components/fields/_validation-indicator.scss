@@ -47,7 +47,7 @@
     animation: validity-animation-valid 0.5s ease-out alternate both;
 
     &:after {
-        background-image: url('/images/symbol-tick.svg'); // TODO: fix missing svg links
+        //background-image: url('/images/symbol-tick.svg'); // TODO: fix missing svg links
     }
 }
 
@@ -55,6 +55,6 @@
     animation: validity-animation-error 0.5s ease-out alternate both;
 
     &:after {
-        background-image: url('/images/symbol-error.svg');
+        //background-image: url('/images/symbol-error.svg'); // TODO: fix missing svg links
     }
 }
