@@ -114,6 +114,12 @@ $cardRadius: $defaultUnit;
     }
 }
 
+.card--noHeader.card--noFooter {
+    .card__content {
+        border-radius: $cardRadius;
+    }
+}
+
 .card--flex {
     > * {
         padding: $defaultUnit * 2;
