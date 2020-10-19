@@ -2,10 +2,11 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: './main.js',
+    entry: './src/index.ts',
+    devtool: 'inline-source-map',
     output: {
-        path: path.join(__dirname, '/bundle'),
-        filename: 'index_bundle.js'
+        path: path.join(__dirname, 'dist'),
+        filename: 'bundle.js'
     },
     devServer: {
         inline: true,
@@ -13,6 +14,11 @@ module.exports = {
     },
     module: {
         rules: [
+            {
+                test: /\.tsx?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/,
+            },
             {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
@@ -56,11 +62,11 @@ module.exports = {
         ]
     },
     resolve: {
-        extensions: ['.js', '.jsx', '.scss']
+        extensions: ['.js', '.jsx', '.scss', '.ts', '.tsx']
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './index.html'
+            template: './dist/index.html'
         })
     ]
 }
