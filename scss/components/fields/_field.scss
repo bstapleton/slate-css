@@ -240,7 +240,7 @@ $maxFieldWidth: $maxInputWidth + ($defaultUnit * 6); // Leave space on the right
     display: inline-block;
     width: initial;
     font-size: initial;
-    margin-bottom: $defaultUnit;
+    margin-bottom: $defaultUnit * 0.5;
 
     &.disabled {
         color: $grey-500;
@@ -275,7 +275,7 @@ $maxFieldWidth: $maxInputWidth + ($defaultUnit * 6); // Leave space on the right
 }
 
 .field__help {
-    padding-top: $defaultUnit;
+    margin-bottom: $defaultUnit * 0.75;
     font-style: italic;
     @if (lightness($background) > 50) {
         color: $grey-600;
@@ -299,33 +299,6 @@ $maxFieldWidth: $maxInputWidth + ($defaultUnit * 6); // Leave space on the right
 
     &.warning {
         color: $warning;
-    }
-}
-
-.field__prefix { // TODO: rework this to be inside the input area
-    flex: 0 0 ($defaultUnit * 4);
-    height: $defaultUnit * 3;
-
-    @include sm-up() {
-        flex: 0 0 ($defaultUnit * 6);
-        padding-left: ($defaultUnit * 0.75);
-        height: $defaultUnit * 4.5;
-    }
-}
-
-.field__main {
-    @include flex();
-}
-
-.field__affix { // TODO: rework this to be inside the input area
-    flex: 0 0 ($defaultUnit * 4);
-    padding-left: $defaultUnit;
-    height: $defaultUnit * 3;
-
-    @include sm-up() {
-        flex: 0 0 ($defaultUnit * 6);
-        padding-left: ($defaultUnit * 0.75);
-        height: $defaultUnit * 4.5;
     }
 }
 
