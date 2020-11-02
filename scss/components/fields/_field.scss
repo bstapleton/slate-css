@@ -179,6 +179,8 @@ $maxFieldWidth: $maxInputWidth + ($defaultUnit * 6); // Leave space on the right
         color: $grey-100;
     }
 
+    @include dataTypes;
+
     &:hover {
         &:not(:focus) {
             @if (lightness($background) > 50) {

@@ -1,3 +1,18 @@
+$dataTypes: (
+    "postcode": 6,
+    "sortcode": 6,
+    "bankaccount": 8,
+    "creditcard": 16
+);
+
+@mixin dataTypes {
+    @each $type, $multiplier in $dataTypes {
+        &[data-content="#{$type}"] {
+            max-width: $defaultFontSize * $multiplier;
+        }
+    }
+}
+
 @mixin hiddenInput {
     width: 0;
     height: 0;
