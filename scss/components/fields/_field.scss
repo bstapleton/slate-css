@@ -161,9 +161,9 @@ $maxFieldWidth: $maxInputWidth + ($defaultUnit * 6); // Leave space on the right
 }
 
 .field__input {
-    font-size: initial;
+    font-size: $defaultFontSize;
     border-radius: $defaultUnit;
-    padding: ($defaultUnit * 2) ($defaultUnit * 1.5);
+    padding: $defaultUnit * 1.5;
     outline: 0;
     width: 100%;
     max-width: $maxInputWidth;
@@ -190,8 +190,7 @@ $maxFieldWidth: $maxInputWidth + ($defaultUnit * 6); // Leave space on the right
         }
 
         &.disabled,
-        &:disabled,
-        &[contenteditable]:read-only {
+        &:disabled {
             color: $grey-500;
             border-color: $grey-500;
             cursor: not-allowed;
@@ -214,8 +213,7 @@ $maxFieldWidth: $maxInputWidth + ($defaultUnit * 6); // Leave space on the right
     }
 
     &:disabled,
-    &.disabled,
-    &[contenteditable]:read-only {
+    &.disabled {
         color: $grey-500;
         @if (lightness($background) > 50) {
             background-color: $white;
