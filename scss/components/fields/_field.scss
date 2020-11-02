@@ -307,6 +307,11 @@ $maxFieldWidth: $maxInputWidth + ($defaultUnit * 6); // Leave space on the right
 .warning-message,
 .valid-feedback {
     max-width: $maxInputWidth;
+}
+
+.field-validation-error,
+.warning-message,
+.valid-feedback {
     margin: 0;
 }
 
