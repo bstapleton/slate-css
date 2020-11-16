@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" aria-hidden="true">
+  <title>Status icon</title>
+  <desc>A circular status icon</desc>
+  <g>
+    <circle class="symbol" cx="8" cy="8" r="7"/>
+    <path class="outline" d="M8,2A6,6,0,1,1,2,8,6,6,0,0,1,8,2M8,0a8,8,0,1,0,8,8A8,8,0,0,0,8,0Z"/>
+  </g>
+</svg>

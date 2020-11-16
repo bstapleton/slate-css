@@ -13,3 +13,13 @@
         }
     }
 }
+
+@mixin horizontalList() {
+    @include noListStyle;
+    @include flex;
+    flex-direction: row;
+
+    > li {
+        @include flex-grow-shrink;
+    }
+}

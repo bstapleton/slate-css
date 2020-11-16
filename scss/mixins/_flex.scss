@@ -38,9 +38,13 @@
     }
 }
 
+@mixin flex-grow-shrink {
+    flex: 1 1 auto;
+}
+
 @mixin flex-grow {
     .flex-grow {
-        flex: 1 1 auto;
+        flex: 1 0 auto;
     }
 }
 

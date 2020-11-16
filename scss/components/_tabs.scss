@@ -1,0 +1,82 @@
+.tabs {
+  @include horizontalList;
+
+  &.tabs--center {
+    .tab {
+      text-align: center;
+    }
+  }
+}
+
+.tab {
+  $borderColour: $grey-400;
+  $borderHoverColour: $grey-300;
+  @if (lightness($background) < 50) {
+    $borderColour: $grey-600;
+    $borderHoverColour: $grey-700;
+  }
+
+  position: relative;
+  margin-top: ($defaultUnit * 0.5);
+  padding: $defaultUnit * 2;
+  border-top: 2px solid $borderColour;
+  border-right: 1px solid $borderColour;
+  transition: 0.1s linear border, 0.2s ease-in-out padding;
+
+  &:first-child {
+    border-left: 1px solid $borderColour;
+    border-radius: $defaultUnit 0 0 0;
+  }
+
+  &:last-child {
+    border-radius: 0 $defaultUnit 0 0;
+  }
+
+  svg {
+    $symbolColour: $primary;
+    $outlineColour: scale-color($primary, $lightness: -50%);
+    @if (lightness($background) < 50) {
+      $outlineColour: scale-color($primary, $lightness: 50%);
+    }
+    z-index: -1;
+    position: absolute;
+    height: $defaultUnit * 1.5;
+    bottom: ($defaultUnit * 3)*-1;
+    left: calc(50% - #{$defaultUnit});
+    transition: 0.25s ease-in-out bottom;
+
+    .symbol {
+      fill: $symbolColour;
+    }
+
+    .outline {
+      fill: $outlineColour;
+    }
+  }
+
+  &:hover {
+    margin-top: 0;
+    padding-top: $defaultUnit * 1.5;
+    border-top: ($defaultUnit * 0.5) solid $borderHoverColour;
+    transition: 0.1s linear border, 0.2s ease-in-out padding;
+
+    svg {
+      bottom: $defaultUnit * 0.5;
+    }
+  }
+}
+
+.tab--selected,
+.tab--selected:hover {
+  margin-top: 0;
+  padding-top: $defaultUnit * 1.5;
+  border-top: ($defaultUnit * 0.5) solid $primary;
+
+  svg {
+    bottom: $defaultUnit * 0.5;
+  }
+}
+
+.tab__content {
+  background: $background;
+}
